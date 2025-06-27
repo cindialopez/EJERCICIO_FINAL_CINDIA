@@ -1,0 +1,125 @@
+<!-- Elaborado por: Cindia López, Mayo 2025 -->
+<!-- Ejercicio 1. Sesión Didáctica 1 - Programación 3 -->
+<!-- Asesor: Prof. Carlos Márquez -->
+<!-- Página de Dashboard - Pantalla principal de la aplicación -->
+
+<!-- Encabezado de la página -->
+<ion-header [translucent]="true"> <!-- Aplica un efecto translúcido al encabezado -->
+  <ion-toolbar> <!-- Barra superior que contiene el título -->
+    <ion-title>Dashboard</ion-title> <!-- Título de la página -->
+  </ion-toolbar>
+</ion-header>
+
+<!-- Contenido principal -->
+<ion-content [fullscreen]="true"> <!-- Asegura que el contenido ocupe toda la pantalla -->
+  <div class="dashboard-container"> <!-- Contenedor general que organiza los elementos del Dashboard -->
+
+    <!-- Logo principal -->
+    <div class="logo-container"> <!-- Contenedor centrado para el logo -->
+      <img src="assets/img/logo.png" alt="Mi Logo"> <!-- Imagen del logo de la aplicación -->
+    </div>
+
+    <!-- Frase promocional -->
+    <div class="frase-container"> <!-- Contenedor con mensaje motivacional para promover el servicio -->
+      <h2>Impulsando tu negocio con soluciones tecnológicas innovadoras.</h2>
+    </div>
+
+    <!-- Tarjeta del portafolio -->
+    <ion-grid> <!-- Estructura en cuadrícula para acomodar elementos -->
+      <ion-row> <!-- Fila dentro de la cuadrícula -->
+        <ion-col size="12"> <!-- Columna que ocupa todo el ancho disponible -->
+          <ion-card routerLink="/portafolio" class="card-portafolio"> <!-- Tarjeta enlazada a la sección de portafolio -->
+            <ion-card-header>
+              <ion-card-title>Portafolio</ion-card-title> <!-- Título de la tarjeta -->
+            </ion-card-header>
+            <ion-card-content>Muestra tus mejores trabajos.</ion-card-content> <!-- Breve descripción del portafolio -->
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Sección de testimonios -->
+    <div class="testimonios-container"> <!-- Contenedor que agrupa los testimonios de clientes -->
+      <h3>Testimonios de clientes</h3>
+      <ion-list>
+        <ion-item> <!-- Primer testimonio -->
+          <ion-icon name="chatbubble" slot="start"></ion-icon> <!-- Ícono de comentario -->
+          <ion-label>"Increíble servicio, altamente recomendado!" - Juan Ramírez</ion-label>
+        </ion-item>
+        <ion-item> <!-- Segundo testimonio -->
+          <ion-icon name="chatbubble" slot="start"></ion-icon>
+          <ion-label>"Rápido y eficiente, solucionó todos mis problemas." - María Gómez</ion-label>
+        </ion-item>
+        <ion-item> <!-- Tercer testimonio -->
+          <ion-icon name="chatbubble" slot="start"></ion-icon>
+          <ion-label>"Profesionalismo y calidad en cada detalle." - Pedro Pérez</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!-- Botón para descargar el CV -->
+    <div class="cv-container"> <!-- Contenedor donde se encuentra el botón de descarga del CV -->
+      <ion-button expand="full" color="secondary" href="assets/img/cv.pdf" download="cv.pdf">
+        Descargar CV 📄 <!-- Botón que permite descargar el archivo CV -->
+      </ion-button>
+    </div>
+
+    <!-- Botón para solicitar servicio -->
+    <ion-button expand="full" routerLink="/contacto" color="primary"> <!-- Enlace a la página de contacto -->
+      ¡Solicita un Servicio! <!-- Botón de acción para acceder a los servicios -->
+    </ion-button>
+  </div>
+</ion-content>
+
+<!-- Estilos personalizados para la página -->
+<style>
+  /* Fondo general de la página */
+  ion-content {
+    --background: url('/assets/img/fondo.jpg') no-repeat center center / cover;
+  }
+
+  /* Estilos del logo */
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .logo-container img {
+    width: 120px;
+    height: auto;
+  }
+
+  /* Estilos de la frase promocional */
+  .frase-container {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+
+  /* Estilos para la sección de testimonios */
+  .testimonios-container {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+  }
+
+  .testimonios-container h3 {
+    text-align: center;
+  }
+
+  /* Estilos del botón de descarga de CV */
+  .cv-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Personalización de la tarjeta de portafolio */
+  .card-portafolio {
+    background-color: rgba(0, 123, 255, 0.8);
+    color: white;
+  }
+</style>

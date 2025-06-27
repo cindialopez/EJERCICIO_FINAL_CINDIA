@@ -1,0 +1,117 @@
+<!-- Elaborado por: Cindia López, Mayo 2025 -->
+<!-- Ejercicio 1. Sesión Didáctica 1 - Programación 3 -->
+<!-- Asesor: Prof. Carlos Márquez -->
+
+<!-- Página de Contacto - Permite a los usuarios comunicarse y obtener información de contacto -->
+
+<!-- Encabezado de la página -->
+<ion-header>
+  <ion-toolbar> <!-- Barra superior que contiene el título -->
+    <ion-title class="titulo">Contacto</ion-title> <!-- Título principal de la página -->
+  </ion-toolbar>
+</ion-header>
+
+<!-- Contenido principal de la página -->
+<ion-content class="ion-padding"> <!-- Espaciado interno para mejor distribución -->
+  <div class="contenedor-blanco"> <!-- Fondo blanco semitransparente -->
+
+    <!-- Formulario de contacto reorganizado al inicio de la página -->
+    <h2 class="titulo">Escríbeme un mensaje</h2> <!-- Subtítulo para el formulario -->
+    <form (ngSubmit)="onSubmit()" #formRef="ngForm" novalidate>
+
+      <ion-item>
+        <ion-label position="floating">Nombre ✱</ion-label> <!-- Campo obligatorio -->
+        <ion-input type="text" required name="nombre" [(ngModel)]="formData.nombre" #nombre="ngModel"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="nombre.invalid && nombre.touched">
+        <p class="ion-padding-start">El nombre es obligatorio</p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating">Correo ✱</ion-label> <!-- Campo obligatorio -->
+        <ion-input type="email" required name="email" [(ngModel)]="formData.email" #email="ngModel"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="email.invalid && email.touched">
+        <p class="ion-padding-start">El correo no es válido</p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating">Teléfono ✱</ion-label> <!-- Campo obligatorio -->
+        <ion-input type="tel" required name="telefono" [(ngModel)]="formData.telefono" #telefono="ngModel" pattern="^[0-9]{7,}$"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="telefono.invalid && telefono.touched">
+        <p class="ion-padding-start">El teléfono debe tener al menos 7 dígitos</p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating">Mensaje ✱</ion-label> <!-- Campo obligatorio -->
+        <ion-textarea required name="mensaje" [(ngModel)]="formData.mensaje" #mensaje="ngModel"></ion-textarea>
+      </ion-item>
+      <ion-text color="danger" *ngIf="mensaje.invalid && mensaje.touched">
+        <p class="ion-padding-start">El mensaje es obligatorio</p>
+      </ion-text>
+
+      <!-- Mensaje de error general desde el componente TypeScript -->
+      <ion-text color="danger" *ngIf="error">
+        <p class="ion-text-center">{{ error }}</p>
+      </ion-text>
+
+      <!-- Botón de envío -->
+      <ion-button expand="block" type="submit" [disabled]="formRef.invalid || cargando">
+        <ion-spinner *ngIf="cargando" name="dots"></ion-spinner>
+        <span *ngIf="!cargando">Enviar</span>
+      </ion-button>
+
+      <!-- Mensaje de éxito tras enviar el formulario -->
+      <ion-text color="success" *ngIf="enviado">
+        <p class="ion-text-center ion-margin-top">
+          <strong>¡Gracias por contactarnos!</strong><br>
+          Pronto te estaremos respondiendo.
+        </p>
+      </ion-text>
+
+      <!-- Mensaje aclaratorio sobre campos obligatorios -->
+      <ion-text color="medium">
+        <p class="ion-text-center ion-margin-top"><strong>✱</strong> Campos obligatorios</p>
+      </ion-text>
+
+    </form>
+
+    <!-- Sección de contacto directo movida después del formulario -->
+    <h2 class="titulo">Contacto Directo</h2> <!-- Subtítulo para los datos de contacto -->
+    <p class="texto">Si lo prefieres puedes contactarme directamente</p>
+
+    <ion-list>
+      <ion-item>
+        <ion-icon name="mail" slot="start"></ion-icon> <!-- Ícono de correo -->
+        <ion-label class="texto">
+          <a href="mailto:lopezcrespocindia@gmail.com">lopezcrespocindia&#64;gmail.com</a>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="call" slot="start"></ion-icon> <!-- Ícono de teléfono -->
+        <ion-label class="texto">
+          <a href="tel:+584121479754">+58 412 1479754</a>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="location" slot="start"></ion-icon> <!-- Ícono de ubicación -->
+        <ion-label class="texto">
+          <a href="https://www.google.com/maps?q=10.2384561,-67.2991222" target="_blank">
+            Ver ubicación en Google Maps
+          </a>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <!-- Sección del mapa de ubicación colocada al final -->
+    <h2 class="titulo">Ubicación en el Mapa</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?...tu-url..."
+      width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+
+  </div> <!-- Cierre del contenedor principal -->
+</ion-content>

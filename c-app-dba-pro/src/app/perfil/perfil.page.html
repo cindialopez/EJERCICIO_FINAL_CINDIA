@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Información Personal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="contenedor-blanco">
+    <h2 class="titulo">Sobre mí</h2>
+    <p class="texto">¡Hola! Soy Cindia López, Ingeniero en Informática con una sólida especialización en Administración de Bases de Datos, tanto relacionales como no relacionales. Con experiencia en diversas tecnologías y un enfoque práctico en la gestión y optimización de datos, estoy aquí para ofrecer mis servicios profesionales directamente a tu alcance a través de esta innovadora app.</p>
+
+    <!-- Datos personales -->
+    <ion-list>
+      <ion-item>
+        <ion-icon name="person-circle" slot="start"></ion-icon>
+        <ion-label class="texto"><strong>Nombre:</strong> Cindia López</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="briefcase" slot="start"></ion-icon>
+        <ion-label class="texto"><strong>Profesión:</strong> Ingeniero en Informática. DBA</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="location" slot="start"></ion-icon>
+        <ion-label class="texto"><strong>Ubicación:</strong> ARAGUA, VENEZUELA</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <!-- Sección de habilidades -->
+    <h3 class="titulo">Habilidades y Tecnologías</h3>
+    <ion-chip color="primary">Angular</ion-chip>
+    <ion-chip color="secondary">Ionic</ion-chip>
+    <ion-chip color="tertiary">Bases de Datos</ion-chip>
+
+    <!-- Botón para descargar CV -->
+    <div class="cv-container">
+      <ion-button expand="full" color="secondary" href="assets/img/cv.pdf" download="cv.pdf">
+        Descargar CV 📄
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+

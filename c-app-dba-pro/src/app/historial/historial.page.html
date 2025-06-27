@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Historial de Mensajes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="cerrarSesion()">Salir</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list *ngIf="mensajes.length > 0; else sinMensajes">
+    <ion-item *ngFor="let m of mensajes">
+      <ion-label>
+        <h2>{{ m.nombre }}</h2>
+        <p><strong>Email:</strong> {{ m.email }}</p>
+        <p><strong>Teléfono:</strong> {{ m.telefono }}</p>
+        <p><strong>Mensaje:</strong> {{ m.mensaje }}</p>
+        <p><em>{{ m.fecha | date:'short' }}</em></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #sinMensajes>
+    <ion-text color="medium">
+      <p class="ion-text-center">No hay mensajes registrados aún.</p>
+    </ion-text>
+  </ng-template>
+
+</ion-content>

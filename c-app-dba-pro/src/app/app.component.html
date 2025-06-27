@@ -1,0 +1,41 @@
+<!--Elaborado por: Cindia López, Mayo 2025
+Modificado por: Cindia López, Junio 2025
+Ejercicio 1. Sesión didática 1. Programación 3.
+Asesor: Prof. Carlos Márquez-->
+<!-- MENÚ LATERAL - Aquí se define el menú lateral de la aplicación -->
+<!-- Se utiliza ion-menu para generar un menu lateral en el lado izquierdo superior -->
+<ion-menu side="start" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title> <!-- Título del menú lateral -->
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <!-- Lista de opciones del menú - Se generan dinámicamente con *ngFor -->
+      <ion-item *ngFor="let item of menuItems" [routerLink]="item.url">
+        <ion-icon [name]="item.icon" slot="start"></ion-icon> <!-- 🔹 Icono de cada opción -->
+        <ion-label>{{ item.title }}</ion-label> <!-- 🔹 Texto de la opción -->
+      </ion-item>
+      <ion-item routerLink="/login-admin" routerDirection="root">
+          <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-label>Historial (Admin)</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- ENCABEZADO PRINCIPAL - Contiene el título de la aplicación y el botón de menú -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> <!-- Botón para abrir el menú lateral -->
+    </ion-buttons>
+    <ion-title>Mi Perfil Profesional</ion-title> <!-- Título de la aplicación -->
+  </ion-toolbar>
+</ion-header>
+
+<!-- CONTENEDOR DE LA APP - Aquí se renderizan las páginas seleccionadas -->
+<ion-app>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

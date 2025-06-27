@@ -1,0 +1,127 @@
+/* Elaborado por: Cindia López, Mayo 2025 
+Ejercicio 1. Sesión Didáctica 1. Programación 3 
+Asesor: Prof. Carlos Márquez 
+Página de Estilos Globales */
+
+/*Este archivo es un estilo global que define reglas CSS 
+* que afectan toda la aplicación. Aquí se configuran elementos generales, 
+* como el menú, los colores principales, los fondos y otros estilos reutilizables.
+*/
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import '@ionic/angular/css/palettes/dark.system.css';
+
+/* Estilos Globales - Para el Módulo del Menú */
+ion-menu {
+  --width: 250px;
+}
+
+ion-header, ion-toolbar {
+  --background: #3880ff;
+  --color: white;
+}
+
+ion-item {
+  --color: #000;
+}
+
+ion-icon {
+  color: #3880ff;
+}
+
+ion-label {
+  color: #000;
+}
+
+ion-menu-button {
+  color: white;
+}
+
+ion-title {
+  color: white;
+}
+
+/* Estilos para el menú lateral */
+ion-list, ion-content {
+  --background: #f8f8f8;
+}
+
+ion-menu ion-item {
+  --background: #fff;
+  --color: #000;
+}
+
+ion-menu ion-item:hover {
+  --background: #e0e0e0;
+}
+
+ion-menu ion-item:active {
+  --background: #d0d0d0;
+}
+
+ion-menu ion-icon {
+  color: #3880ff;
+}
+
+ion-menu ion-label {
+  color: #000;
+}
+
+/* Estilos Globales - Para el Contenido */
+
+ion-content {
+  --background: url('/assets/img/fondo.jpg') no-repeat center center / cover;
+}
+
+/* Contenedor blanco semitransparente */
+.contenedor-blanco {
+  background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto general en negro */
+.texto {
+  color: #000000; /* Negro */
+}
+
+/* Títulos en Azul Rey */
+.titulo {
+  color: #0033A0; /* Azul Rey */
+  font-weight: bold;
+}

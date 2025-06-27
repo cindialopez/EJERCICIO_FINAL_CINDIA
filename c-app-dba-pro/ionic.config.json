@@ -1,0 +1,7 @@
+{
+  "name": "C:\\appDBAPro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
