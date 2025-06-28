@@ -1,12 +1,23 @@
+<!-- Elaborado por: Cindia López, Junio 2025 -->
+<!-- Ejercicio 2. Sesión Didáctica 2 - Programación 3 -->
+<!-- Asesor: Prof. Carlos Márquez -->
+
+<!-- Página de Login Admin - Permite al administrador autenticarse para acceder al historial de mensajes -->
+
+<!-- Fase II: Esta vista fue creada como parte de la segunda fase del proyecto. Implementé un formulario simple de autenticación con campos para correo y contraseña. Si las credenciales son válidas, se guarda una clave en localStorage y se redirige al historial. También añadí retroalimentación visual en caso de error. -->
+
+<!-- Encabezado con título fijo -->
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Acceso Admin</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!-- Contenido principal con espaciado y fondo personalizado -->
 <ion-content class="ion-padding">
-  <div class="contenedor-blanco">
+  <div class="contenedor-blanco"> <!-- Contenedor visual para destacar el formulario -->
 
+    <!-- Campo: Correo electrónico -->
     <ion-item>
       <ion-label position="floating">Correo electrónico</ion-label>
       <ion-input
@@ -16,6 +27,7 @@
       </ion-input>
     </ion-item>
 
+    <!-- Campo: Contraseña -->
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input
@@ -25,8 +37,10 @@
       </ion-input>
     </ion-item>
 
+    <!-- Botón de ingreso que ejecuta la función ingresar() -->
     <ion-button expand="block" class="ion-margin-top" (click)="ingresar()">Ingresar</ion-button>
 
+    <!-- Mensaje de error si las credenciales son incorrectas -->
     <ion-text color="danger" *ngIf="error">
       <p class="ion-text-center">{{ error }}</p>
     </ion-text>

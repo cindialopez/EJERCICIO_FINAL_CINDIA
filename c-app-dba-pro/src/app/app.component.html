@@ -1,9 +1,14 @@
-<!--Elaborado por: Cindia López, Mayo 2025
-Modificado por: Cindia López, Junio 2025
-Ejercicio 1. Sesión didática 1. Programación 3.
-Asesor: Prof. Carlos Márquez-->
+<!-- Elaborado por: Cindia López, Mayo 2025 -->
+<!-- Modificado por: Cindia López, Junio 2025 -->
+<!-- Ejercicio 2. Sesión Didáctica 2 - Programación 3 -->
+<!-- Asesor: Prof. Carlos Márquez -->
+
 <!-- MENÚ LATERAL - Aquí se define el menú lateral de la aplicación -->
-<!-- Se utiliza ion-menu para generar un menu lateral en el lado izquierdo superior -->
+
+<!-- Fase I: En esta fase inicial, diseñé el menú lateral utilizando <ion-menu> para permitir la navegación entre las secciones principales de la app. Las opciones se generan dinámicamente desde un arreglo llamado menuItems. -->
+
+<!-- Fase II: Modifiqué el menú para incluir una opción adicional llamada "Historial (Admin)", que permite acceder al módulo protegido donde se visualizan los mensajes enviados desde el formulario de contacto. Esta opción está visible para todos, pero el acceso está restringido desde el componente. -->
+
 <ion-menu side="start" contentId="main-content">
   <ion-header>
     <ion-toolbar>
@@ -14,12 +19,14 @@ Asesor: Prof. Carlos Márquez-->
     <ion-list>
       <!-- Lista de opciones del menú - Se generan dinámicamente con *ngFor -->
       <ion-item *ngFor="let item of menuItems" [routerLink]="item.url">
-        <ion-icon [name]="item.icon" slot="start"></ion-icon> <!-- 🔹 Icono de cada opción -->
-        <ion-label>{{ item.title }}</ion-label> <!-- 🔹 Texto de la opción -->
+        <ion-icon [name]="item.icon" slot="start"></ion-icon> <!-- Icono de cada opción -->
+        <ion-label>{{ item.title }}</ion-label> <!-- Texto de la opción -->
       </ion-item>
+
+      <!-- Opción adicional agregada en Fase II para acceso al historial -->
       <ion-item routerLink="/login-admin" routerDirection="root">
-          <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-label>Historial (Admin)</ion-label>
+        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-label>Historial (Admin)</ion-label>
       </ion-item>
     </ion-list>
   </ion-content>

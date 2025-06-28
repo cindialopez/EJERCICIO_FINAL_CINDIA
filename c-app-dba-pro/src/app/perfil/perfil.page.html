@@ -1,15 +1,30 @@
+<!-- Elaborado por: Cindia López, Junio 2025 -->
+<!-- Ejercicio 1. Sesión Didáctica 1 - Programación 3 -->
+<!-- Asesor: Prof. Carlos Márquez -->
+
+<!-- Página de Perfil - Presenta información personal, habilidades y permite descargar el CV -->
+
+<!-- Fase I: Esta vista fue creada en la primera fase del proyecto. Su objetivo es mostrar información personal de forma clara y profesional. Incluí una breve presentación, datos personales, habilidades destacadas y un botón para descargar el CV. Todo el contenido es estático y no requiere lógica adicional. -->
+
+<!-- Encabezado con título fijo -->
 <ion-header>
   <ion-toolbar>
     <ion-title>Información Personal</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!-- Contenido principal con espaciado interno -->
 <ion-content class="ion-padding">
-  <div class="contenedor-blanco">
-    <h2 class="titulo">Sobre mí</h2>
-    <p class="texto">¡Hola! Soy Cindia López, Ingeniero en Informática con una sólida especialización en Administración de Bases de Datos, tanto relacionales como no relacionales. Con experiencia en diversas tecnologías y un enfoque práctico en la gestión y optimización de datos, estoy aquí para ofrecer mis servicios profesionales directamente a tu alcance a través de esta innovadora app.</p>
+  <div class="contenedor-blanco"> <!-- Contenedor con fondo blanco para destacar el contenido -->
 
-    <!-- Datos personales -->
+    <!-- Sección de presentación -->
+    <h2 class="titulo">Sobre mí</h2>
+    <p class="texto">
+      ¡Hola! Soy Cindia López, Ingeniero en Informática con una sólida especialización en Administración de Bases de Datos, tanto relacionales como no relacionales.
+      Con experiencia en diversas tecnologías y un enfoque práctico en la gestión y optimización de datos, estoy aquí para ofrecer mis servicios profesionales directamente a tu alcance a través de esta innovadora app.
+    </p>
+
+    <!-- Lista de datos personales -->
     <ion-list>
       <ion-item>
         <ion-icon name="person-circle" slot="start"></ion-icon>
@@ -25,18 +40,18 @@
       </ion-item>
     </ion-list>
 
-    <!-- Sección de habilidades -->
+    <!-- Sección de habilidades destacadas -->
     <h3 class="titulo">Habilidades y Tecnologías</h3>
     <ion-chip color="primary">Angular</ion-chip>
     <ion-chip color="secondary">Ionic</ion-chip>
     <ion-chip color="tertiary">Bases de Datos</ion-chip>
 
-    <!-- Botón para descargar CV -->
+    <!-- Botón para descargar el CV -->
     <div class="cv-container">
       <ion-button expand="full" color="secondary" href="assets/img/cv.pdf" download="cv.pdf">
         Descargar CV 📄
       </ion-button>
     </div>
+
   </div>
 </ion-content>
-

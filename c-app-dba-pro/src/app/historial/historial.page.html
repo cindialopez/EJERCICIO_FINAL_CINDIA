@@ -1,3 +1,12 @@
+<!-- Elaborado por: Cindia López, Junio 2025 -->
+<!-- Ejercicio 2. Sesión Didáctica 2 - Programación 3 -->
+<!-- Asesor: Prof. Carlos Márquez -->
+
+<!-- Página de Historial - Muestra los mensajes enviados desde el formulario de contacto -->
+
+<!-- Fase II: Este módulo fue creado en la segunda fase del proyecto. Implementé esta vista para que el administrador pueda visualizar todos los mensajes almacenados en la base de datos. Utiliza una petición GET al backend y muestra los datos en orden cronológico. También añadí un botón para cerrar sesión, que elimina la clave de autenticación del almacenamiento local. -->
+
+<!-- Encabezado con título y botón de cierre de sesión -->
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Historial de Mensajes</ion-title>
@@ -7,8 +16,10 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- Contenido principal -->
 <ion-content class="ion-padding">
 
+  <!-- Lista de mensajes cargados desde el backend -->
   <ion-list *ngIf="mensajes.length > 0; else sinMensajes">
     <ion-item *ngFor="let m of mensajes">
       <ion-label>
@@ -16,11 +27,12 @@
         <p><strong>Email:</strong> {{ m.email }}</p>
         <p><strong>Teléfono:</strong> {{ m.telefono }}</p>
         <p><strong>Mensaje:</strong> {{ m.mensaje }}</p>
-        <p><em>{{ m.fecha | date:'short' }}</em></p>
+        <p><em>{{ m.fecha | date:'short' }}</em></p> <!-- Fecha formateada -->
       </ion-label>
     </ion-item>
   </ion-list>
 
+  <!-- Mensaje alternativo si no hay mensajes registrados -->
   <ng-template #sinMensajes>
     <ion-text color="medium">
       <p class="ion-text-center">No hay mensajes registrados aún.</p>
